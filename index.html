@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para meus pais ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 1.7;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 14px 22px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #ffb6c1;
+    }
+
+    #mensagem {
+      margin-top: 25px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>❤️ Pai e Mãe ❤️</h1>
+    <p>
+      Fiz esse site com muito carinho só para agradecer por tudo.
+      Obrigada por sempre estarem ao meu lado, pelo amor, apoio e por acreditarem em mim.
+      Amo muito vocês e tudo que conquisto também é graças a vocês ✨
+    </p>
+
+    <button onclick="mostrarMensagem()">Clique para uma surpresa 💖</button>
+    <p id="mensagem"></p>
+  </div>
+
+  <script>
+    function mostrarMensagem() {
+      document.getElementById("mensagem").innerText =
+        "Vocês são meu maior presente na vida 🥹❤️";
+    }
+
+    function criarCoracao() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(criarCoracao, 400);
+  </script>
+</body>
+</html>
